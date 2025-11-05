@@ -23,6 +23,7 @@ import {
   createServiceOrder,
   updateServiceOrder,
   deleteServiceOrder,
+  createSchedule,  // ✅ ADICIONADO - Import estático
   ServiceOrder,
   Client,
 } from '../../backend/database';
@@ -167,8 +168,7 @@ export default function ServiceOrdersScreen({ route, navigation }: any) {
       if (formData.createSchedule && formData.scheduleDate && formData.scheduleTime) {
         console.log('📅 Criando agendamento automático...');
         
-        const { createSchedule } = await import('../../backend/database');
-        
+        // ✅ CORRIGIDO - Usa o import do topo, não mais await import()
         await createSchedule({
           userId: user.id,
           clientId: formData.clientId,
