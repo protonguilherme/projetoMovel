@@ -26,7 +26,32 @@ import ScheduleDetailsScreen from './frontend/screens/ScheduleDetailsScreen';
 // Telas de Estoque
 import StockScreen from './frontend/screens/Stockscreen';
 
-const Stack = createNativeStackNavigator();
+// ✅ DEFINIÇÃO DOS TIPOS DE NAVEGAÇÃO (EXPORTADO!)
+export type RootStackParamList = {
+  Login: undefined;
+  Register: undefined;
+  ForgotPassword: undefined;
+  Home: { user: any };
+  ClientsList: { user: any; shouldRefresh?: boolean; newClientId?: string };
+  AddClient: { user: any };
+  EditClient: { client: any; user: any };
+  ClientDetails: { client: any; user: any };
+  ServiceOrdersList: { user: any; shouldRefresh?: boolean; newServiceOrderId?: string };
+  AddServiceOrder: { user: any };
+  EditServiceOrder: { serviceOrder: any; user: any };
+  ServiceOrderDetails: { serviceOrder: any; user: any };
+  InventoryList: { user: any; shouldRefresh?: boolean; newItemId?: string };
+  AddInventoryItem: { user: any };
+  EditInventoryItem: { item: any; user: any };
+  InventoryItemDetails: { item: any; user: any };
+  ScheduleList: { user: any; shouldRefresh?: boolean; newScheduleId?: string };
+  AddSchedule: { user: any };
+  ScheduleDetails: { schedule: any; user: any };
+  Stock: { user: any };
+};
+
+// ✅ Stack tipado corretamente
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
