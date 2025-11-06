@@ -11,6 +11,7 @@ import {
   Alert,
   Dimensions,
   StatusBar,
+  Platform,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFocusEffect } from '@react-navigation/native';
@@ -77,25 +78,48 @@ export default function HomeScreen({ route, navigation }: any) {
     loadStats();
   };
 
-  const handleLogout = () => {
-    Alert.alert(
-      'Sair da Conta',
-      'Tem certeza que deseja sair?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Sair',
-          style: 'destructive',
-          onPress: async () => {
-            await logout();
-            navigation.reset({
-              index: 0,
-              routes: [{ name: 'Login' }],
-            });
+  const handleLogout = async () => {
+    // Para Web: usar window.confirm
+    if (Platform.OS === 'web') {
+      const confirmed = window.confirm('Tem certeza que deseja sair?');
+      if (confirmed) {
+        try {
+          await logout();
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Login' }],
+          });
+        } catch (error) {
+          console.error('Erro ao fazer logout:', error);
+          window.alert('Erro ao fazer logout. Tente novamente.');
+        }
+      }
+    } else {
+      // Para Mobile: usar Alert.alert
+      Alert.alert(
+        'Sair da Conta',
+        'Tem certeza que deseja sair?',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          {
+            text: 'Sair',
+            style: 'destructive',
+            onPress: async () => {
+              try {
+                await logout();
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: 'Login' }],
+                });
+              } catch (error) {
+                console.error('Erro ao fazer logout:', error);
+                Alert.alert('Erro', 'Não foi possível fazer logout. Tente novamente.');
+              }
+            },
           },
-        },
-      ]
-    );
+        ]
+      );
+    }
   };
 
   const getCompletionRate = () => {
@@ -133,7 +157,7 @@ export default function HomeScreen({ route, navigation }: any) {
       title: 'Estoque',
       icon: '📦',
       gradient: ['#43e97b', '#38f9d7'],
-      screen: null,
+      screen: 'Stock',
       count: '—',
     },
   ];

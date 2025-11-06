@@ -24,7 +24,7 @@ import ScheduleScreen from './frontend/screens/ScheduleScreen';
 import ScheduleDetailsScreen from './frontend/screens/ScheduleDetailsScreen';
 
 // Telas de Estoque
-import StockScreen from './frontend/screens/Stockscreen';
+import StockScreen from './frontend/screens/Stockscreen';  // ✅ NOME DO ARQUIVO REAL!
 
 // ✅ DEFINIÇÃO DOS TIPOS DE NAVEGAÇÃO (EXPORTADO!)
 export type RootStackParamList = {
