@@ -436,8 +436,24 @@ const styles = StyleSheet.create({
   weekDayCell: { flex: 1, alignItems: 'center', paddingVertical: 8 },
   weekDayText: { fontSize: 12, fontWeight: '600', color: '#6B7280' },
   calendar: { flexDirection: 'row', flexWrap: 'wrap' },
-  dayCell: { width: '14.28%', aspectRatio: 1, justifyContent: 'center', alignItems: 'center', position: 'relative' },
-  dayCellSelected: { backgroundColor: '#6366F1', borderRadius: 12 },
+ dayCell: {
+  width: '14.28%',
+  aspectRatio: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  borderWidth: 1,
+  borderColor: '#E5E7EB', // cinza claro
+  borderRadius: 8,
+},
+
+  dayCellSelected: {
+  backgroundColor: '#6366F1',
+  borderRadius: 12,
+  borderWidth: 1,
+  borderColor: '#6366F1',
+},
+
   dayCellToday: { backgroundColor: '#EFF6FF', borderRadius: 12 },
   dayText: { fontSize: 16, color: '#111827', fontWeight: '500' },
   dayTextSelected: { color: '#FFF', fontWeight: 'bold' },
