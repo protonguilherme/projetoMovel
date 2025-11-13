@@ -11,7 +11,7 @@ A solução compartilhada neste repositório consiste no desenvolvimento de uma 
 ## 👥 Equipe do projeto
 
 - **202402360231** - Guilherme Proton (Desenvolvimento de software e integração)
-- **202403369893** - Luís Flávio Queiroz (Documentação e banco de dados)
+- **202403369893** - Luís Flávio Queirod (Documentação e banco de dados)
 
 ---
 
