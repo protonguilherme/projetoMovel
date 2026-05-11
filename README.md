@@ -2,7 +2,7 @@
 
 Projeto da disciplina de programação de dispositivos móveis com ReactNative + Expo (Android)
 
-**Orientador:** Prof. Luiz Gustavo Turatti
+**Orientador:** Prof. Kesede Rodrigues Julio
 
 A solução compartilhada neste repositório consiste no desenvolvimento de uma plataforma mobile para gerenciamento completo de oficinas mecânicas automotivas, permitindo controle de clientes, ordens de serviço, agendamentos e estoque de forma organizada e digital, substituindo o método tradicional de controle manual em papel.
 
@@ -10,9 +10,11 @@ A solução compartilhada neste repositório consiste no desenvolvimento de uma 
 
 ## 👥 Equipe do projeto
 
-- **202402360231** - Guilherme Proton (Desenvolvimento de software e integração)
-- **202403369893** - Luís Flávio Queirod (Documentação e banco de dados)
-- **201951430662** - Wellington da Cruz Caldeira 
+- **202402360231** - Guilherme Proton
+- **202403369893** - Luís Flávio Queirod
+- **202403871751** - Erick Valente Sprogis
+- **202403521581**  - Carlos Miguel Marques Biudes
+- **202402410881** - Rafael Silva de Oliveira
 
 ---
 
